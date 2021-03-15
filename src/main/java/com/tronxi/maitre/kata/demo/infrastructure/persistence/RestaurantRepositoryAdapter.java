@@ -1,4 +1,4 @@
-package com.tronxi.maitre.kata.demo.infrastructure.persistence.adapter;
+package com.tronxi.maitre.kata.demo.infrastructure.persistence;
 
 import com.tronxi.maitre.kata.demo.domain.model.Restaurant;
 import com.tronxi.maitre.kata.demo.domain.ports.secondary.RestaurantRepository;

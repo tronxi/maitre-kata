@@ -1,9 +1,9 @@
 package com.tronxi.maitre.kata.demo.domain.ports.primary;
 
 
-import com.tronxi.maitre.kata.demo.domain.model.Reserve;
-import com.tronxi.maitre.kata.demo.domain.model.ReserveTableResult;
+import com.tronxi.maitre.kata.demo.domain.model.reservetable.ReserveTableOrder;
+import com.tronxi.maitre.kata.demo.domain.model.reservetable.ReserveTableResult;
 
 public interface ReserveTable {
-    ReserveTableResult reserve(Reserve reserve);
+    ReserveTableResult reserve(ReserveTableOrder reserveTableOrder);
 }

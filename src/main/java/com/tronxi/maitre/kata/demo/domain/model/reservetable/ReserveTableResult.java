@@ -1,4 +1,4 @@
-package com.tronxi.maitre.kata.demo.domain.model;
+package com.tronxi.maitre.kata.demo.domain.model.reservetable;
 
 public enum ReserveTableResult {
     ACCEPTED,

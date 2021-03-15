@@ -1,26 +1,24 @@
 package com.tronxi.maitre.kata.demo.domain.model;
 
-import lombok.Data;
+import lombok.AllArgsConstructor;
 
 import java.time.LocalDate;
 import java.util.Map;
 import java.util.Optional;
 
-@Data
+@AllArgsConstructor
 public class Restaurant {
-    private final Map<LocalDate, Table> tables;
+    private final Map<LocalDate, Tables> tables;
 
     public boolean isAvailability(Reserve reserve) {
-        return Optional.ofNullable(tables.get(reserve.getDate()))
-                .map(table -> table.hasCapacity(reserve.getAmount()))
+        return Optional.ofNullable(tables.get(reserve.date()))
+                .map(tables -> tables.hasAnyWithCapacity(reserve.amount()))
                 .orElse(false);
     }
 
     public void reserve(Reserve reserve) {
         if(!isAvailability(reserve)) throw new IllegalStateException();
 
-        Table table = tables.get(reserve.getDate());
-        Table reservedTable = new Table(table.getCapacity() - reserve.getAmount());
-        tables.put(reserve.getDate(), reservedTable);
+        tables.get(reserve.date()).reserve(reserve);
     }
 }
