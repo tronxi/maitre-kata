@@ -20,7 +20,7 @@ public class Restaurant {
         if(!isAvailability(reserve)) throw new IllegalStateException();
 
         Table table = tables.get(reserve.getDate());
-        Table newTable = new Table(table.getCapacity() - reserve.getAmount());
-        tables.put(reserve.getDate(), newTable);
+        Table reservedTable = new Table(table.getCapacity() - reserve.getAmount());
+        tables.put(reserve.getDate(), reservedTable);
     }
 }

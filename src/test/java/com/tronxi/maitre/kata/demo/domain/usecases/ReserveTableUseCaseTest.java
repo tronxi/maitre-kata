@@ -94,7 +94,7 @@ public class ReserveTableUseCaseTest {
     }
 
     @Test
-    public void shouldAcceptWhenRestaurantHasAvailableTableForTwoReservationDate() {
+    public void shouldAcceptWhenRestaurantHasAvailableTableForTwoReservations() {
         //GIVEN
         LocalDate date = LocalDate.of(2099, 10, 15);
 
